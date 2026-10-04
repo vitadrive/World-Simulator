@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>세계기록관 — 판타지 세계 시뮬레이터</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="error-banner" class="error-banner" style="display:none"></div>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <h1>세계기록관</h1>
+    </div>
+    <div class="controls">
+      <input id="seed-input" type="text" placeholder="시드 (비워두면 무작위)" />
+      <button id="new-world-btn">새 세계 생성</button>
+      <span class="divider"></span>
+      <button id="step-btn">1년 진행</button>
+      <button id="play-btn">재생</button>
+      <select id="speed-select">
+        <option value="1">1배속</option>
+        <option value="2">2배속</option>
+        <option value="5">5배속</option>
+        <option value="10">10배속</option>
+      </select>
+      <span class="divider"></span>
+      <div class="mode-toggle">
+        <button id="mode-faction-btn" class="mode-btn active">세력권 모드</button>
+        <button id="mode-person-btn" class="mode-btn">인물 모드</button>
+      </div>
+      <span class="divider"></span>
+      <div class="year-block">
+        <span class="year-label">경과</span>
+        <span id="year-display">0</span>
+        <span class="year-label">년</span>
+      </div>
+      <span class="divider"></span>
+      <div class="view-tabs">
+        <button id="tab-sim" class="tab active">관찰</button>
+        <button id="tab-archive" class="tab">아카이브</button>
+      </div>
+      <button id="end-world-btn">세계 종료</button>
+    </div>
+  </header>
+
+  <main class="app-main" id="sim-view">
+    <section class="map-section">
+      <div class="map-scroll">
+        <canvas id="map-canvas"></canvas>
+      </div>
+      <div id="inspector" class="inspector">지도의 타일이나 좌측 목록의 세력·인물을 클릭하면 여기에 상세 정보가 표시됩니다.</div>
+      <div class="seed-footer">시드: <span id="seed-display">—</span></div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-block faction-block">
+        <h2>세력</h2>
+        <div id="faction-list" class="faction-list"></div>
+      </div>
+      <div class="panel-block person-block">
+        <h2>주요 인물</h2>
+        <div id="person-list" class="person-list"></div>
+      </div>
+      <div class="panel-block chronicle-block">
+        <h2>연대기</h2>
+        <div id="chronicle-list" class="chronicle-list"></div>
+      </div>
+    </aside>
+  </main>
+
+  <main class="archive-view" id="archive-view" style="display:none;">
+    <nav class="archive-nav">
+      <button data-nav="overview" class="arc-nav-btn active">개요</button>
+      <button data-nav="timeline" class="arc-nav-btn">전체 연대기</button>
+      <button data-nav="replay" class="arc-nav-btn">리플레이</button>
+    </nav>
+    <div class="archive-content" id="archive-content"></div>
+  </main>
+
+  <script src="js/rng.js"></script>
+  <script src="js/textgen.js"></script>
+  <script src="js/terrain.js"></script>
+  <script src="js/names.js"></script>
+  <script src="js/emblems.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/persons.js"></script>
+  <script src="js/relations.js"></script>
+  <script src="js/economy.js"></script>
+  <script src="js/paradigms.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/simulation.js"></script>
+  <script src="js/war.js"></script>
+  <script src="js/subfactions.js"></script>
+  <script src="js/disasters.js"></script>
+  <script src="js/independents.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/archive.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
