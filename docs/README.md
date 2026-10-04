@@ -47,7 +47,7 @@
 ```
 index.html        진입점 (스크립트 로딩 순서가 중요 — docs/ARCHITECTURE.md 참고)
 style.css
-js/
+js/               모든 자바스크립트 파일
   rng.js          시드/서브시드/PRNG
   textgen.js      TextGenerator 인터페이스 (템플릿 → 추후 AI 교체 가능)
   terrain.js  names.js  emblems.js  scripts.js
@@ -55,12 +55,13 @@ js/
   world.js  simulation.js  war.js  subfactions.js  disasters.js  independents.js
   render.js  archive.js  main.js
 docs/
+  README.md       이 문서
   ARCHITECTURE.md 코드 구조·데이터 모델·확장 방법
 ```
 
 ## 문서
 
-- `docs/ARCHITECTURE.md` — 모듈 책임, 틱 순서, 데이터 모델, 확장 가이드
+- [`ARCHITECTURE.md`](ARCHITECTURE.md) — 모듈 책임, 틱 순서, 데이터 모델, 확장 가이드
 - 설계 문서와 로드맵은 프로젝트 관리용으로 별도 보관 중
 
 ## 알려진 한계
